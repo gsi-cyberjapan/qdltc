@@ -56,7 +56,7 @@ $threads.size.times {|i|
           }
           FileUtils.cp(o[:path], bk_path, :preserve => true)
         end
-        File.open("#{o[:path]}", 'w') {|w| w.print buf}
+        File.open("#{o[:path]}", 'wb') {|w| w.print buf}
         File.utime(o[:date], o[:date], o[:path])
         $cache_updates << {:zxy => o[:zxy], :md5 => buf_md5}
         $status[:ok] += 1
