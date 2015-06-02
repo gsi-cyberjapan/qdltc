@@ -72,7 +72,7 @@ watcher = Thread.new do
     print "#{Time.now.iso8601[11..18]} #{$status[:path]} #{$q.size} "
     print "#{$keys.map{|k| ($status[k.to_sym] - last_status[k.to_sym]) / WAIT}}/s "
 #    print "#{$keys.map{|k| $status[k.to_sym]}} "
-    print "#{$count}(#{$status[:ok]}) #{(100.0 * $count / ALL).to_i}% (#{$cache_updates.size})    \n"
+    print "#{$count}(#{$status[:ok]}) #{(100.0 * $count / ALL).to_i}% (#{$cache_updates.size})\n"
     begin
       $db.transaction do
         $cache_updates.each {|r|
