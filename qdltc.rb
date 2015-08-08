@@ -8,9 +8,9 @@ require 'thread'
 require 'time'
 require 'sequel'
 
-THEME = 'std'
+THEME = File.basename(File.absolute_path('.'))
 N_THREADS = 8
-Q_SIZE = 200
+Q_SIZE = 2000
 WAIT = 10
 ALL = 50749203
 CONTINUE = nil
