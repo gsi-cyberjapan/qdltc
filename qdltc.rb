@@ -98,10 +98,7 @@ Zlib::GzipReader.open('mokuroku.csv.gz').each_line {|l|
   date = date.to_i
   url = "http://cyberjapandata.gsi.go.jp/xyz/#{THEME}/#{path}"
   zxy = path.split('.')[0]
-  mt = /\{z\}/.match(path)
-  if(mt != nil)
-  	next
-  end
+  next if /\{z\}/.match(path)
   $status[:path] = path
   if(CONTINUE && $count < CONTINUE)
     $status[:skip] += 1
