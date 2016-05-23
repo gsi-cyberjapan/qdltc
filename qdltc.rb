@@ -8,7 +8,7 @@ require 'thread'
 require 'time'
 require 'sequel'
 
-THEME = File.basename(File.absolute_path('.'))
+THEME = ARGV[0] || File.basename(File.absolute_path('.'))
 N_THREADS = 8
 Q_SIZE = 2000
 WAIT = 10
